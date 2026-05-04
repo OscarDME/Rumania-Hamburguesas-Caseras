@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  /* Smokehouse premium palette */
+  --color-night: #0B0807;
+  --color-charcoal: #1A120D;
+  --color-smoke: #2A1F18;
+  --color-cream: #FBF1DC;
+  --color-cream-soft: #F4E4C3;
+  --color-mustard: #E8A33D;
+  --color-amber-grill: #C9701E;
+  --color-tomato: #C8302C;
+  --color-lettuce: #6FA94A;
+  --color-meat: #6B2D17;
+  --color-muted: #6F5E50;
+  --color-muted-light: #A89784;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: var(--color-mustard);
+  color: var(--color-night);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseSoft {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(232, 163, 61, 0.55); }
+  50%      { box-shadow: 0 0 0 22px rgba(232, 163, 61, 0); }
+}
+
+@keyframes flameFlicker {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 1; }
+  25%      { transform: translateY(-1px) scale(1.05); opacity: 0.92; }
+  50%      { transform: translateY(0) scale(0.98); opacity: 1; }
+  75%      { transform: translateY(-1px) scale(1.04); opacity: 0.95; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s ease-out both;
+}
+
+.animate-pulse-soft {
+  animation: pulseSoft 2.4s ease-out infinite;
+}
+
+.animate-flame {
+  animation: flameFlicker 1.6s ease-in-out infinite;
+}
+
+.text-shimmer {
+  background: linear-gradient(90deg, var(--color-mustard) 0%, var(--color-cream) 50%, var(--color-mustard) 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
