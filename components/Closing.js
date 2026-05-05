@@ -1,11 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ChevronRight, MessageCircle } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { copy } from "@/lib/copy";
 
-const BASE_CHECKOUT_URL = "https://www.oriopay.app/p/101-de-burgeri-de-casa";
-const WHATSAPP_URL = "https://wa.me/REEMPLAZAR";
+const BASE_CHECKOUT_URL = "https://www.oriopay.app/p/101-domacich-burgeru";
 
 export default function Closing() {
   const { closing } = copy;
@@ -77,16 +76,6 @@ export default function Closing() {
             <span>{closing.cta}</span>
             <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1" strokeWidth={3} />
           </button>
-
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-cream/40 bg-night/40 backdrop-blur text-cream font-bold text-base px-7 py-5 hover:border-mustard hover:text-mustard transition-all"
-          >
-            <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
-            <span>{closing.whatsapp}</span>
-          </a>
         </div>
 
         {/* Hidden link to ensure checkoutUrl is part of DOM for fallback */}
